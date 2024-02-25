@@ -12,6 +12,7 @@ import javax.validation.Valid;
  * @author yunlongn
  */
 public interface BpmModelService {
+
     /**
      * 获得流程模型分页
      *
@@ -61,7 +62,7 @@ public interface BpmModelService {
     /**
      * 修改模型的状态，实际更新的部署的流程定义的状态
      *
-     * @param id 编号
+     * @param id    编号
      * @param state 状态
      */
     void updateModelState(String id, Integer state);
@@ -73,5 +74,13 @@ public interface BpmModelService {
      * @return BPMN Model
      */
     BpmnModel getBpmnModel(String id);
+
+    /**
+     * 获得流程定义编号对应的 BPMN Model
+     *
+     * @param processDefinitionId 流程定义编号
+     * @return BPMN Model
+     */
+    BpmnModel getBpmnModelByDefinitionId(String processDefinitionId);
 
 }
